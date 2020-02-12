@@ -28,5 +28,20 @@
 
 <style lang='stylus'>
   // SUGGESTION: style the check-button here
-
+  .check-button
+    margin 0 auto
+    width: 280px;
+    height: 100px;
+    border-radius: 4px;
+    border: solid 1px #ced0d9;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 100px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3d4250;
 </style>
