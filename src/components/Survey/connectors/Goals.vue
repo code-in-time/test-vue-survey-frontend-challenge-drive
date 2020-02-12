@@ -8,12 +8,12 @@
       ThvButton,
       CheckButton
     },
-    props: {
-      name: {
-        type: String,
-        default: ''
-      }
-    },
+    // props: {
+    //   name: {
+    //     type: String,
+    //     default: ''
+    //   }
+    // },
     data () {
       return {
         goals: {
@@ -44,6 +44,13 @@
       },
       back () {
         this.$router.push('/name')
+      }
+    },
+    computed: {
+      name: {
+        get () {
+          return this.$store.state.survey.name
+        },
       }
     }
   }
