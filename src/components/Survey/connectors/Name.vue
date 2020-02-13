@@ -8,6 +8,7 @@
       TextInput,
       ThvButton
     },
+    // Not used anymore as the data was moved to VUEX
     // data () {
     //   return {
     //     name: ''

@@ -19,16 +19,18 @@
 </script>
 
 <template lang='pug'>
-  .check-button(
+  button(
     :class="{ 'check-button--selected': selected }",
     tabindex='0'
+    v-value=value
+    v-on:click="$emit('checkButtonClick', value)"
   ) {{ text }}
 
 </template>
 
 <style lang='stylus'>
   // SUGGESTION: style the check-button here
-  .check-button
+  button
     margin 0 auto
     width: 280px;
     height: 100px;

@@ -44,6 +44,9 @@
       },
       back () {
         this.$router.push('/name')
+      },
+      checkButtonClick(x) {
+          console.log(x)
       }
     },
     computed: {
@@ -68,6 +71,9 @@
           v-for='(goal, key) in goals',
           :key='key',
           :text='goal.name'
+          :value='goal.name',
+          :selected='true'
+          @checkButtonClick="checkButtonClick"
         )
 
         .grid-x.button-container
