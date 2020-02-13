@@ -8,39 +8,22 @@
       ThvButton,
       CheckButton
     },
-    data () {
-      return {
-        diets: {
-          no: {
-            name: 'No'
-          },
-          coeliac: {
-            name: 'Coeliac'
-          },
-          lowCarbHighFat: {
-            name: 'Low-carb, high-fat'
-          },
-          paleo: {
-            name: 'Paleo'
-          },
-          pescatarian: {
-            name: 'Pescatarian'
-          },
-          plantBased: {
-            name: 'Plant-based'
-          },
-          other: {
-            name: 'Other'
-          }
-        }
-      }
-    },
     methods: {
       submit () {
         this.$router.push('/dob')
       },
       back () {
         this.$router.push('/goals')
+      },
+      checkButtonClick(diet) {
+        this.$store.dispatch('survey/TOGGLE_DIET', diet)
+      }
+    },
+    computed: {
+      diets: {
+        get () {
+          return this.$store.state.survey.diets
+        },
       }
     }
   }
@@ -57,6 +40,9 @@
           v-for='(diet, key) in diets',
           :key='key',
           :text='diet.name'
+          :value='diet.name',
+          :selected='diet.selected'
+          @checkButtonClick="checkButtonClick"
         )
 
         .grid-x.button-container

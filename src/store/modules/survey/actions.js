@@ -4,5 +4,8 @@ export default {
   },
   TOGGLE_GOAL (context, goal) {
     context.commit('toggleGoal', goal)
+  },
+  TOGGLE_DIET (context, diet) {
+    context.commit('toggleDiet', diet)
   }
 }

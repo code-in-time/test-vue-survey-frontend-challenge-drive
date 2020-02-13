@@ -25,7 +25,37 @@ const state = () => ({
       name: 'Weight',
       selected: false
     }
+  },
+  diets: {
+    no: {
+      name: 'No',
+      selected: false
+    },
+    coeliac: {
+      name: 'Coeliac',
+      selected: false
+    },
+    lowCarbHighFat: {
+      name: 'Low-carb, high-fat',
+      selected: false
+    },
+    paleo: {
+      name: 'Paleo',
+      selected: false
+    },
+    pescatarian: {
+      name: 'Pescatarian',
+      selected: false
+    },
+    plantBased: {
+      name: 'Plant-based',
+      selected: false
+    },
+    other: {
+      name: 'Other',
+      selected: false
+    }
   }
-})
+});
 
 export default state
