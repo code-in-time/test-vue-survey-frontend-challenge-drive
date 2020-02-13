@@ -55,6 +55,16 @@ const state = () => ({
       name: 'Other',
       selected: false
     }
+  },
+  genders: {
+    male: {
+      name: 'Male',
+      selected: false
+    },
+    female: {
+      name: 'Female',
+      selected: false
+    }
   }
 });
 

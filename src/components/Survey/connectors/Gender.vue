@@ -8,24 +8,22 @@
       ThvButton,
       CheckButton
     },
-    data () {
-      return {
-        genders: {
-          male: {
-            name: 'Male'
-          },
-          female: {
-            name: 'Female'
-          }
-        }
-      }
-    },
     methods: {
       submit () {
         alert('Survey complete!')
       },
       back () {
         this.$router.push('/dob')
+      },
+      checkButtonClick(gender) {
+        this.$store.dispatch('survey/TOGGLE_GENDER', gender)
+      }
+    },
+    computed: {
+      genders: {
+        get () {
+          return this.$store.state.survey.genders
+        },
       }
     }
   }
@@ -44,6 +42,9 @@
           v-for='(gender, key) in genders',
           :key='key',
           :text='gender.name'
+          :value='gender.name',
+          :selected='gender.selected'
+          @checkButtonClick="checkButtonClick"
         )
 
         .grid-x.button-container

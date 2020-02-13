@@ -7,5 +7,8 @@ export default {
   },
   TOGGLE_DIET (context, diet) {
     context.commit('toggleDiet', diet)
+  },
+  TOGGLE_GENDER (context, gender) {
+    context.commit('toggleGender', gender)
   }
 }
