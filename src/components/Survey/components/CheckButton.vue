@@ -46,4 +46,10 @@
     letter-spacing: normal;
     text-align: center;
     color: #3d4250;
+
+  .check-button--selected
+    width: 280px;
+    border: solid 2px #3ecadd;
+    background-color: #f4fcfd;
+  
 </style>

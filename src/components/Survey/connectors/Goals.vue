@@ -8,36 +8,6 @@
       ThvButton,
       CheckButton
     },
-    // props: {
-    //   name: {
-    //     type: String,
-    //     default: ''
-    //   }
-    // },
-    data () {
-      return {
-        goals: {
-          improveEnergy: {
-            name: 'Energy'
-          },
-          improveFitness: {
-            name: 'Fitness'
-          },
-          improveLongTermHealth: {
-            name: 'Long-term health'
-          },
-          improveMood: {
-            name: 'Mood'
-          },
-          improveSleep: {
-            name: 'Sleep'
-          },
-          improveWeight: {
-            name: 'Weight'
-          }
-        }
-      }
-    },
     methods: {
       submit () {
         this.$router.push('/diet')
@@ -45,14 +15,19 @@
       back () {
         this.$router.push('/name')
       },
-      checkButtonClick(x) {
-          console.log(x)
+      checkButtonClick(goal) {
+        this.$store.dispatch('survey/TOGGLE_GOAL', goal)
       }
     },
     computed: {
       name: {
         get () {
           return this.$store.state.survey.name
+        },
+      },
+      goals: {
+        get () {
+          return this.$store.state.survey.goals
         },
       }
     }
@@ -72,7 +47,7 @@
           :key='key',
           :text='goal.name'
           :value='goal.name',
-          :selected='true'
+          :selected='goal.selected'
           @checkButtonClick="checkButtonClick"
         )
 
