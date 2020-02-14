@@ -52,7 +52,7 @@
         h1 Nice to meet you {{ name }}. What would you like to focus on?
         p.body--large.question-description 
           span(
-            :class="{'question-description-invalid' : selectedItems >=maxAllowed }"
+            :class="{'question-description-invalid' : selectedItems === maxAllowed }"
           ) Choose up to four
         .spacer.sp__top--sm
 
@@ -63,6 +63,7 @@
           :value='goal.name',
           :selected='goal.selected'
           @checkButtonClick="checkButtonClick"
+          :isDisabled='!goal.selected && (maxAllowed === selectedItems)'
         )
 
         .grid-x.button-container
@@ -72,8 +73,8 @@
           .cell.auto.align-right
             thv-button(
               element='button',
-              size='large'
-              :disabled="this.selectedItems == 0"
+              size='large',
+              :disabled='selectedItems < maxAllowed',
               @click='submit'
             ) Next
 </template>

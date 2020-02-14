@@ -13,6 +13,10 @@
       selected: {
         type: Boolean,
         default: false
+      },
+      isDisabled: {
+        type: Boolean,
+        default: true
       }
     }
   }
@@ -24,6 +28,7 @@
     tabindex='0'
     v-value=value
     v-on:click="$emit('checkButtonClick', value)"
+    :disabled="isDisabled"
   ) {{ text }}
 
 </template>
