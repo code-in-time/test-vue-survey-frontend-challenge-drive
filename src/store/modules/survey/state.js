@@ -71,11 +71,6 @@ const state = () => ({
     }
   },
   genders: {
-    validation: {
-      maxAllowed: 1,
-      selectedItems: 0,
-      isValid: true
-    },
     data: {
       male: {
         name: 'Male',

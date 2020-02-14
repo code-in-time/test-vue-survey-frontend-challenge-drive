@@ -38,18 +38,14 @@ export default {
     // state.diets.validation.isValid = state.diets.validation.selectedItems <= state.diets.validation.maxAllowed
   },
   toggleGender (state, gender) {
-    // Lowercase the first letter
-    const property = gender[0].toLowerCase() + gender.slice(1)
-    // Toggle selected property
-    state.genders.data[property].selected = !state.genders.data[property].selected
+    const g = gender.toLowerCase()
 
-    // Validate the diets
-    // Convert the data into a string and count the number of selected=true properties
-    const strData = JSON.stringify(state.genders.data)
-    const matched = strData.match(/"selected":true/g)
-    // Save the amount selected
-    state.genders.validation.selectedItems = matched ? matched.length : 0
-    // Test if it passes validation
-    // state.genders.validation.isValid = state.genders.validation.selectedItems < state.genders.validation.maxAllowed
+    if (g === 'female') {
+      state.genders.data.female.selected = !state.genders.data.female.selected
+      state.genders.data.male.selected = false
+    } else if (g === 'male') {
+      state.genders.data.male.selected = !state.genders.data.male.selected
+      state.genders.data.female.selected = false
+    }
   }
 }

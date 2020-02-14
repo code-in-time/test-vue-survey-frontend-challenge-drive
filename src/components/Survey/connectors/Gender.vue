@@ -24,6 +24,12 @@
         get () {
           return this.$store.state.survey.genders.data
         }
+      },
+      oneGenderSelected: {
+        get () {
+          const result = this.$store.state.survey.genders.data.female.selected === true || this.$store.state.survey.genders.data.male.selected === true
+          return result
+        }
       }
     }
   }
@@ -45,6 +51,7 @@
           :value='gender.name',
           :selected='gender.selected'
           @checkButtonClick="checkButtonClick"
+          :isDisabled='false'
         )
 
         .grid-x.button-container
@@ -56,6 +63,7 @@
               element='button',
               size='large'
               @click='submit'
+              :disabled='!oneGenderSelected'
             ) Next
 
 </template>
