@@ -46,3 +46,30 @@ export const getSelectedGoals = goalsObj => {
 
   return result
 }
+
+export const validateSurveySaveObj = obj => {
+
+  let err = []
+
+  if (obj.name === '' ) {
+    err.push('No name')
+  }
+
+  if (obj.date.day === null || obj.date.month === null || obj.date.year === null) {
+    err.push('Date incorrect')
+  }
+
+  if (obj.name.diet === '' ) {
+    err.push('No diet')
+  }
+
+  if (obj.name.gender === '' ) {
+    err.push('No gender')
+  }
+
+  if (obj.name.goals.length === 0 ) {
+    err.push('No goals')
+  }
+
+  return err
+}
