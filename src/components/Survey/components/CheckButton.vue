@@ -36,8 +36,9 @@
 <style lang='stylus'>
   button
     margin 0 auto
-    width: 280px;
-    height: 100px;
+    max-width: 478px;
+    width: 100%;
+    height: 120px;
     border-radius: 4px;
     border: solid 1px #ced0d9;
     background-color: #ffffff;
@@ -53,6 +54,9 @@
     display: block;
     cursor: pointer;
 
+    @media screen and (max-width 400px)
+      height: 100px;
+
   button.check-button--selected
     border: solid 2px #3ecadd;
     background-color: #f4fcfd;
@@ -62,4 +66,5 @@
     border: solid 1px #e5e7f1;
     background-color: #ffffff;
     cursor: default
+
 </style>
