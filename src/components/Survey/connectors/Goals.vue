@@ -30,9 +30,14 @@
           return this.$store.state.survey.goals.data
         },
       },
-      isValid: {
+      maxAllowed: {
         get () {
-          return this.$store.state.survey.goals.validation.isValid
+          return this.$store.state.survey.goals.validation.maxAllowed
+        }
+      },
+      selectedItems: {
+        get () {
+          return this.$store.state.survey.goals.validation.selectedItems
         }
       }
 
@@ -47,7 +52,7 @@
         h1 Nice to meet you {{ name }}. What would you like to focus on?
         p.body--large.question-description 
           span(
-            :class="{'question-description-invalid' : !isValid}"
+            :class="{'question-description-invalid' : selectedItems >=maxAllowed }"
           ) Choose up to four
         .spacer.sp__top--sm
 
@@ -68,7 +73,7 @@
             thv-button(
               element='button',
               size='large'
-              :disabled='!isValid'
+              :disabled="this.selectedItems == 0"
               @click='submit'
             ) Next
 </template>
