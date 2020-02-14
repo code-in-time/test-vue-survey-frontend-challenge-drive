@@ -18,7 +18,7 @@ export default {
     // Save the amount selected
     state.goals.validation.selectedItems = matched ? matched.length : 0
     // Test if it passes validation
-    state.goals.validation.isValid = state.goals.validation.selectedItems >= state.goals.validation.maxAllowed ? false : true
+    state.goals.validation.isValid = state.goals.validation.selectedItems < state.goals.validation.maxAllowed
 
   },
   toggleDiet (state, diet) {
@@ -36,7 +36,7 @@ export default {
     // Save the amount selected
     state.diets.validation.selectedItems = matched ? matched.length : 0
     // Test if it passes validation
-    state.diets.validation.isValid = state.diets.validation.selectedItems >= state.diets.validation.maxAllowed ? false : true
+    state.diets.validation.isValid = state.diets.validation.selectedItems < state.diets.validation.maxAllowed
 
   },
   toggleGender (state, gender) {
@@ -52,6 +52,6 @@ export default {
     // Save the amount selected
     state.genders.validation.selectedItems = matched ? matched.length : 0
     // Test if it passes validation
-    state.genders.validation.isValid = state.genders.validation.selectedItems >= state.genders.validation.maxAllowed ? false : true
-  },
+    state.genders.validation.isValid = state.genders.validation.selectedItems < state.genders.validation.maxAllowed
+  }
 }

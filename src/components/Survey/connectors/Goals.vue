@@ -16,7 +16,7 @@
         this.$router.push('/name')
       },
       checkButtonClick(goal) {
-        this.$store.dispatch('survey/TOGGLE_GOAL', goal)
+          this.$store.dispatch('survey/TOGGLE_GOAL', goal)
       }
     },
     computed: {
@@ -29,6 +29,11 @@
         get () {
           return this.$store.state.survey.goals.data
         },
+      },
+      isValid: {
+        get () {
+          return this.$store.state.survey.goals.validation.isValid
+        }
       }
 
     }
@@ -40,7 +45,10 @@
     .cell.small-12.medium-6.medium-offset-3
       .survey-questions__goals.align-center
         h1 Nice to meet you {{ name }}. What would you like to focus on?
-        p.body--large.question-description Choose up to four
+        p.body--large.question-description 
+          span(
+            :class="{'question-description-invalid' : !isValid}"
+          ) Choose up to four
         .spacer.sp__top--sm
 
         check-button(
@@ -60,12 +68,13 @@
             thv-button(
               element='button',
               size='large'
-              :disabled='isValid'
+              :disabled='!isValid'
               @click='submit'
             ) Next
 </template>
 
-
-// Object.keys(this.$store.state.survey.goals).filter(function(row) {
-  return row.selected===true;
-})
+<style lang='stylus'>
+  .survey-questions__goals
+    .question-description-invalid
+      color: #fa476f
+</style>

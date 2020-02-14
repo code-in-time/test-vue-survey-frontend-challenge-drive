@@ -29,7 +29,6 @@
 </template>
 
 <style lang='stylus'>
-  // SUGGESTION: style the check-button here
   button
     margin 0 auto
     width: 280px;
@@ -46,9 +45,9 @@
     letter-spacing: normal;
     text-align: center;
     color: #3d4250;
+    display: block;
 
   .check-button--selected
-    width: 280px;
     border: solid 2px #3ecadd;
     background-color: #f4fcfd;
   
