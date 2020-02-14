@@ -33,9 +33,7 @@
         this.$validator.reset()
         this.$validator.validate().then(result => {
           if (result && !this.feedback) {
-            debugger
-            console.log('0000000', dateObj)
-            // SUGGESTION: could save DOB here is it is now assumed valid
+            // Save in the state
             this.$store.dispatch('survey/SAVE_DATE', dateObj)
             this.$router.push('/gender')
           }
