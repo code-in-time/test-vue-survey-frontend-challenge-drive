@@ -1,3 +1,5 @@
+import { getSelectedGender, getSelectedDiet, getSelectedGoals } from '../../../utils/helper'
+
 export default {
   UPDATE_NAME (context, name) {
     context.commit('updateName', name)
@@ -24,6 +26,25 @@ export default {
    */
   SAVE_DATE (context, dateObj) {
     context.commit('saveDate', dateObj)
+  },
+  API_SAVE (context) {
+    //
+    const obj = {
+      name: context.state.name,
+      date: {
+        day: context.state.date.day,
+        month: context.state.date.month,
+        year: context.state.date.year
+      },
+      goals: getSelectedGoals(context.state.goals.data),
+      diet: getSelectedDiet(context.state.diets.data),
+      gender: getSelectedGender(context.state.genders.data)
+
+    }
+
+    // Validate
+
+    //context.commit('apiSave')
   }
 }
 

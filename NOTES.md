@@ -17,7 +17,6 @@ Please leave anything you like in here
 
 ### TODO:
 
-1. date to vuex
 2. api validate at end
 3. progress bar
 4. Tests
