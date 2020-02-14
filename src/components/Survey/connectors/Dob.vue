@@ -22,11 +22,21 @@
     },
     methods: {
       submit () {
+        // This object will be used to store the date in the store
+        const dateObj = {
+          day: this.$refs.DobInput.day,
+          month: this.$refs.DobInput.month,
+          year: this.$refs.DobInput.year
+        }
+
         this.$refs.DobInput.handleSubmit()
         this.$validator.reset()
         this.$validator.validate().then(result => {
           if (result && !this.feedback) {
+            debugger
+            console.log('0000000', dateObj)
             // SUGGESTION: could save DOB here is it is now assumed valid
+            this.$store.dispatch('survey/SAVE_DATE', dateObj)
             this.$router.push('/gender')
           }
         })

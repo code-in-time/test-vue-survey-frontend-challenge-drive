@@ -10,5 +10,21 @@ export default {
   },
   TOGGLE_GENDER (context, gender) {
     context.commit('toggleGender', gender)
+  },
+  /**
+   * Save the date
+   * @param {object} context 
+   * @param {object} dateObj 
+   * example of the dateObj
+   * {
+      day: number
+      month: number
+      year: number
+    }
+   */
+  SAVE_DATE (context, dateObj) {
+    context.commit('saveDate', dateObj)
   }
 }
+
+

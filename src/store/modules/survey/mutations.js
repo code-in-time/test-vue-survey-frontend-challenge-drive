@@ -39,7 +39,7 @@ export default {
   },
   toggleGender (state, gender) {
     const g = gender.toLowerCase()
-
+    // Only one gender can be set at a time
     if (g === 'female') {
       state.genders.data.female.selected = !state.genders.data.female.selected
       state.genders.data.male.selected = false
@@ -47,5 +47,10 @@ export default {
       state.genders.data.male.selected = !state.genders.data.male.selected
       state.genders.data.female.selected = false
     }
+  },
+  saveDate (state, dateObj) {
+    state.date.day = dateObj.day
+    state.date.month = dateObj.month
+    state.date.year = dateObj.year
   }
 }

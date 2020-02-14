@@ -1,5 +1,10 @@
 const state = () => ({
   name: '',
+  date: {
+    day: null,
+    month: null,
+    year: null
+  },
   goals: {
     validation: {
       maxAllowed: 4,
