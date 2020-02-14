@@ -27,9 +27,10 @@
       },
       goals: {
         get () {
-          return this.$store.state.survey.goals
+          return this.$store.state.survey.goals.data
         },
       }
+
     }
   }
 </script>
@@ -59,6 +60,12 @@
             thv-button(
               element='button',
               size='large'
+              :disabled='isValid'
               @click='submit'
             ) Next
 </template>
+
+
+// Object.keys(this.$store.state.survey.goals).filter(function(row) {
+  return row.selected===true;
+})

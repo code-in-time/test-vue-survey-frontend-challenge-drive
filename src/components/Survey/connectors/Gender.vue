@@ -22,7 +22,7 @@
     computed: {
       genders: {
         get () {
-          return this.$store.state.survey.genders
+          return this.$store.state.survey.genders.data
         },
       }
     }

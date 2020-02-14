@@ -22,7 +22,7 @@
     computed: {
       diets: {
         get () {
-          return this.$store.state.survey.diets
+          return this.$store.state.survey.diets.data
         },
       }
     }
