@@ -2,8 +2,9 @@ const state = () => ({
   name: '',
   goals: {
     validation: {
-      max: 4,
-      maxSelected: false,
+      maxAllowed: 4,
+      selectedItems: 0,
+      isValid: true
     },
     data: {
       improveEnergy: {
@@ -34,8 +35,9 @@ const state = () => ({
   },
   diets: {
     validation: {
-      max: 1,
-      maxSelected: false,
+      maxAllowed: 1,
+      selectedItems: 0,
+      isValid: true
     },
     data: {
       no: {
@@ -70,8 +72,9 @@ const state = () => ({
   },
   genders: {
     validation: {
-      max: 1,
-      maxSelected: false,
+      maxAllowed: 1,
+      selectedItems: 0,
+      isValid: true
     },
     data: {
       male: {

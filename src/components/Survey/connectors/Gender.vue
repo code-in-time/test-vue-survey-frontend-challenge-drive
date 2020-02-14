@@ -23,7 +23,7 @@
       genders: {
         get () {
           return this.$store.state.survey.genders.data
-        },
+        }
       }
     }
   }
