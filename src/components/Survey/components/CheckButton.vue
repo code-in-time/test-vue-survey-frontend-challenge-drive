@@ -51,9 +51,15 @@
     text-align: center;
     color: #3d4250;
     display: block;
+    cursor: pointer;
 
-  .check-button--selected
+  button.check-button--selected
     border: solid 2px #3ecadd;
     background-color: #f4fcfd;
   
+  button:disabled
+    color: #ced0d9;
+    border: solid 1px #e5e7f1;
+    background-color: #ffffff;
+    cursor: default
 </style>

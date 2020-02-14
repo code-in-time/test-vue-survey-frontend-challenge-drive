@@ -52,7 +52,7 @@
         h1 Nice to meet you {{ name }}. What would you like to focus on?
         p.body--large.question-description 
           span(
-            :class="{'question-description-invalid' : selectedItems === maxAllowed }"
+            :class="{'question-description-invalid' : selectedItems >= 1 }"
           ) Choose up to four
         .spacer.sp__top--sm
 
@@ -74,7 +74,7 @@
             thv-button(
               element='button',
               size='large',
-              :disabled='selectedItems < maxAllowed',
+              :disabled='selectedItems == 0'
               @click='submit'
             ) Next
 </template>
