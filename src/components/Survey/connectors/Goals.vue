@@ -63,7 +63,7 @@
           :value='goal.name',
           :selected='goal.selected'
           @checkButtonClick="checkButtonClick"
-          :isDisabled='!goal.selected && (maxAllowed === selectedItems)'
+          :isDisabled='!goal.selected && (selectedItems === maxAllowed)'
         )
 
         .grid-x.button-container

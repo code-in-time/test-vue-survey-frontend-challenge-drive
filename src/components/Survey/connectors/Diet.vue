@@ -24,6 +24,16 @@
         get () {
           return this.$store.state.survey.diets.data
         }
+      },
+      maxAllowed: {
+        get () {
+          return this.$store.state.survey.diets.validation.maxAllowed
+        }
+      },
+      selectedItems: {
+        get () {
+          return this.$store.state.survey.diets.validation.selectedItems
+        }
       }
     }
   }
@@ -43,6 +53,7 @@
           :value='diet.name',
           :selected='diet.selected'
           @checkButtonClick="checkButtonClick"
+          :isDisabled='!diet.selected && (selectedItems === 1)'
         )
 
         .grid-x.button-container
@@ -54,6 +65,7 @@
               element='button',
               size='large'
               @click='submit'
+              :disabled='selectedItems == 0'
             ) Next
 
 </template>
