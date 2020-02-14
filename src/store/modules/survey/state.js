@@ -1,6 +1,10 @@
 const state = () => ({
   name: '',
   goals: {
+    validation: {
+      max: 4,
+      maxSelected: false,
+    },
     data: {
       improveEnergy: {
         name: 'Energy',
@@ -29,6 +33,10 @@ const state = () => ({
     }
   },
   diets: {
+    validation: {
+      max: 1,
+      maxSelected: false,
+    },
     data: {
       no: {
         name: 'No',
@@ -61,6 +69,10 @@ const state = () => ({
     }
   },
   genders: {
+    validation: {
+      max: 1,
+      maxSelected: false,
+    },
     data: {
       male: {
         name: 'Male',
