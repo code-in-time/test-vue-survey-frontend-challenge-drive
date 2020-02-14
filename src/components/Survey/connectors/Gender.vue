@@ -15,7 +15,7 @@
       back () {
         this.$router.push('/dob')
       },
-      checkButtonClick(gender) {
+      checkButtonClick (gender) {
         this.$store.dispatch('survey/TOGGLE_GENDER', gender)
       }
     },

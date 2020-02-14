@@ -15,20 +15,20 @@
       back () {
         this.$router.push('/name')
       },
-      checkButtonClick(goal) {
-          this.$store.dispatch('survey/TOGGLE_GOAL', goal)
+      checkButtonClick (goal) {
+        this.$store.dispatch('survey/TOGGLE_GOAL', goal)
       }
     },
     computed: {
       name: {
         get () {
           return this.$store.state.survey.name
-        },
+        }
       },
       goals: {
         get () {
           return this.$store.state.survey.goals.data
-        },
+        }
       },
       maxAllowed: {
         get () {

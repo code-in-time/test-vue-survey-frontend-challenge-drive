@@ -2,14 +2,14 @@ import { startCase } from 'lodash'
 
 export default {
   updateName (state, name) {
-    state.name = name 
+    state.name = name
   },
   toggleGoal (state, goal) {
     // Convert goal to start case and remove all spaces
-    const goalCased = startCase(goal).replace(/\s/g, '');
-    const property = 'improve'+goalCased
+    const goalCased = startCase(goal).replace(/\s/g, '')
+    const property = 'improve' + goalCased
     // Toggle selected property
-    state.goals.data[property].selected = !state.goals.data[property].selected;
+    state.goals.data[property].selected = !state.goals.data[property].selected
 
     // Validate the goals
     // Convert the data into a string and count the number of selected=tru properties
@@ -19,16 +19,14 @@ export default {
     state.goals.validation.selectedItems = matched ? matched.length : 0
     // Test if it passes validation
     state.goals.validation.isValid = state.goals.validation.selectedItems < state.goals.validation.maxAllowed
-                                      // || state.goalss.validation.selectedItems > 0
-
   },
   toggleDiet (state, diet) {
     // Convert diet to start case and remove all non word characters
-    const dietCased = startCase(diet).replace(/\W/g, '');
+    const dietCased = startCase(diet).replace(/\W/g, '')
     // Lowercase the first letter
     const property = dietCased[0].toLowerCase() + dietCased.slice(1)
     // Toggle selected property
-    state.diets.data[property].selected = !state.diets.data[property].selected;
+    state.diets.data[property].selected = !state.diets.data[property].selected
 
     // Validate the diets
     // Convert the data into a string and count the number of selected=true properties
@@ -45,7 +43,7 @@ export default {
     // Toggle selected property
     state.genders.data[property].selected = !state.genders.data[property].selected
 
-        // Validate the diets
+    // Validate the diets
     // Convert the data into a string and count the number of selected=true properties
     const strData = JSON.stringify(state.genders.data)
     const matched = strData.match(/"selected":true/g)

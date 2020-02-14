@@ -15,7 +15,7 @@
       back () {
         this.$router.push('/goals')
       },
-      checkButtonClick(diet) {
+      checkButtonClick (diet) {
         this.$store.dispatch('survey/TOGGLE_DIET', diet)
       }
     },
@@ -23,7 +23,7 @@
       diets: {
         get () {
           return this.$store.state.survey.diets.data
-        },
+        }
       }
     }
   }
