@@ -19,7 +19,6 @@ export const getSelectedGender = genderObj => {
 }
 
 export const getSelectedDiet = dietsObj => {
-  debugger
   // Convert to a simple object
   const data = JSON.parse(JSON.stringify(dietsObj))
   let result = '';
@@ -35,6 +34,15 @@ export const getSelectedDiet = dietsObj => {
 }
 
 export const getSelectedGoals = goalsObj => {
-  const s = 1;
-  const data = JSON.parse(JSON.stringify(goalsObj)) 
+  // Convert to a simple object
+  const data = JSON.parse(JSON.stringify(goalsObj))
+  let result = [];
+  // Get the first selected item
+  for (const property in data) {
+    if (data[property].selected) {
+      result.push(data[property].name)
+    }
+  }
+
+  return result
 }

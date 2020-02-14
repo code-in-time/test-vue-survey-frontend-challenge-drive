@@ -42,10 +42,8 @@ export default {
 
     }
 
-    // Validate
+    // validate
 
-    //context.commit('apiSave')
+    console.log('API save', obj)
   }
 }
-
-
