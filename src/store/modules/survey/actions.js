@@ -15,8 +15,8 @@ export default {
   },
   /**
    * Save the date
-   * @param {object} context 
-   * @param {object} dateObj 
+   * @param {object} context
+   * @param {object} dateObj
    * example of the dateObj
    * {
       day: number
@@ -29,7 +29,6 @@ export default {
   },
   API_SAVE (context) {
     return new Promise((resolve, reject) => {
-      
       const obj = {
         name: context.state.name,
         date: {
@@ -48,13 +47,12 @@ export default {
       if (err.length === 0) {
         // There are no errors
         console.log('API save', obj)
-        resolve("Success!")
+        resolve('Success!')
       } else {
         // There are errors
         console.log('errors', err)
-        reject("errors")
+        reject(err)
       }
-
     })
   }
 }

@@ -32,11 +32,6 @@ export default {
         item.selected = !item.selected
       }
     }
-
-
-    // // Toggle selected property
-    // state.diets.data[property].selected = !state.diets.data[property].selected
-
     // Validate the diets
     // Convert the data into a string and count the number of selected=true properties
     const strData = JSON.stringify(state.diets.data)
