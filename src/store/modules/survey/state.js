@@ -1,9 +1,9 @@
 const state = () => ({
   name: '',
   date: {
-    day: null,
-    month: null,
-    year: null
+    day: '',
+    month: '',
+    year: ''
   },
   goals: {
     validation: {

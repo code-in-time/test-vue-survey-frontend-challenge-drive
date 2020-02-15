@@ -1,4 +1,4 @@
-import { getSelectedGender, getSelectedDiet, getSelectedGoals } from '../../../utils/helper'
+import { getSelectedGender, getSelectedDiet, getSelectedGoals, validateSurveySaveObj } from '../../../utils/helper'
 
 export default {
   UPDATE_NAME (context, name) {
@@ -28,22 +28,33 @@ export default {
     context.commit('saveDate', dateObj)
   },
   API_SAVE (context) {
-    //
-    const obj = {
-      name: context.state.name,
-      date: {
-        day: context.state.date.day,
-        month: context.state.date.month,
-        year: context.state.date.year
-      },
-      goals: getSelectedGoals(context.state.goals.data),
-      diet: getSelectedDiet(context.state.diets.data),
-      gender: getSelectedGender(context.state.genders.data)
+    return new Promise((resolve, reject) => {
+      
+      const obj = {
+        name: context.state.name,
+        date: {
+          day: context.state.date.day,
+          month: context.state.date.month,
+          year: context.state.date.year
+        },
+        goals: getSelectedGoals(context.state.goals.data),
+        diet: getSelectedDiet(context.state.diets.data),
+        gender: getSelectedGender(context.state.genders.data)
+      }
 
-    }
+      // Validate
+      const err = validateSurveySaveObj(obj)
 
-    // validate
+      if (err.length === 0) {
+        // There are no errors
+        console.log('API save', obj)
+        resolve("Success!")
+      } else {
+        // There are errors
+        console.log('errors', err)
+        reject("errors")
+      }
 
-    console.log('API save', obj)
+    })
   }
 }

@@ -10,10 +10,14 @@
     },
     methods: {
       submit () {
-        // Validate data
         // Call the API to Save the data
         this.$store.dispatch('survey/API_SAVE')
-        alert('Survey complete!')
+          .then(res => {
+            alert('Survey complete!', res)
+          })
+          .catch(res => {
+            alert('Error', res)
+          })
       },
       back () {
         this.$router.push('/dob')
