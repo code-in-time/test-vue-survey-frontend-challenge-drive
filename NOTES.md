@@ -21,7 +21,7 @@ Please leave anything you like in here
 5. DOB error
 
 
-#### TODO NOTEs:
+### TODO NOTEs:
 - Add loading spinner
 - Connect real api
 - The journey must always start from the beginning even if the user load in the middle of a journey
