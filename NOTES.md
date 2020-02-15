@@ -17,7 +17,6 @@ Please leave anything you like in here
 - validator
 
 ### TODO:
-3. progress bar
 4. Tests
 5. DOB error
 
