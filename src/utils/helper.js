@@ -2,11 +2,10 @@
  * This file contains utility functions
  */
 
-
 export const getSelectedGender = genderObj => {
   // Convert to a simple object
   const data = JSON.parse(JSON.stringify(genderObj))
-  let result = '';
+  let result = ''
   // Get the first selected item
   for (const property in data) {
     if (data[property].selected) {
@@ -21,7 +20,7 @@ export const getSelectedGender = genderObj => {
 export const getSelectedDiet = dietsObj => {
   // Convert to a simple object
   const data = JSON.parse(JSON.stringify(dietsObj))
-  let result = '';
+  let result = ''
   // Get the first selected item
   for (const property in data) {
     if (data[property].selected) {
@@ -36,7 +35,7 @@ export const getSelectedDiet = dietsObj => {
 export const getSelectedGoals = goalsObj => {
   // Convert to a simple object
   const data = JSON.parse(JSON.stringify(goalsObj))
-  let result = [];
+  let result = []
   // Get the first selected item
   for (const property in data) {
     if (data[property].selected) {
@@ -48,7 +47,6 @@ export const getSelectedGoals = goalsObj => {
 }
 
 export const validateSurveySaveObj = obj => {
-
   let err = []
 
   if (obj.name === '') {
@@ -59,15 +57,15 @@ export const validateSurveySaveObj = obj => {
     err.push('Date incorrect')
   }
 
-  if (obj.diet === '' ) {
+  if (obj.diet === '') {
     err.push('No diet')
   }
 
-  if (obj.gender === '' ) {
+  if (obj.gender === '') {
     err.push('No gender')
   }
 
-  if (obj.goals.length === 0 ) {
+  if (obj.goals.length === 0) {
     err.push('No goals')
   }
 
