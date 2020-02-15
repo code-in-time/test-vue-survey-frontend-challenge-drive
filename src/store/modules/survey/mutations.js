@@ -21,12 +21,21 @@ export default {
     state.goals.validation.isValid = state.goals.validation.selectedItems < state.goals.validation.maxAllowed
   },
   toggleDiet (state, diet) {
-    // Convert diet to start case and remove all non word characters
-    const dietCased = startCase(diet).replace(/\W/g, '')
-    // Lowercase the first letter
-    const property = dietCased[0].toLowerCase() + dietCased.slice(1)
-    // Toggle selected property
-    state.diets.data[property].selected = !state.diets.data[property].selected
+    // Set all to unselected except the button that was clicked
+    for (const d in state.diets.data) {
+      const item = state.diets.data[d]
+
+      // Toggle the button that was clicked
+      if (diet !== item.name) {
+        item.selected = false
+      } else {
+        item.selected = !item.selected
+      }
+    }
+
+
+    // // Toggle selected property
+    // state.diets.data[property].selected = !state.diets.data[property].selected
 
     // Validate the diets
     // Convert the data into a string and count the number of selected=true properties

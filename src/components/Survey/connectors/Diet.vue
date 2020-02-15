@@ -53,7 +53,7 @@
           :value='diet.name',
           :selected='diet.selected'
           @checkButtonClick="checkButtonClick"
-          :isDisabled='!diet.selected && (selectedItems === 1)'
+          :isDisabled='false'
         )
 
         .grid-x.button-container
