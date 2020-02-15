@@ -14,7 +14,7 @@ export const getSelectedGender = genderObj => {
     }
   }
 
-  return result;
+  return result
 }
 
 export const getSelectedDiet = dietsObj => {
@@ -29,7 +29,7 @@ export const getSelectedDiet = dietsObj => {
     }
   }
 
-  return result;
+  return result
 }
 
 export const getSelectedGoals = goalsObj => {
