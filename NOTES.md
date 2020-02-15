@@ -9,7 +9,7 @@ Please leave anything you like in here
 - youtube
 
 ### New to me
-- Vue
+- vue
 - vuex
 - stylus
 - pug
