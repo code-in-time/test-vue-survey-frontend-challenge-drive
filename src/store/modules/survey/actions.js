@@ -54,5 +54,8 @@ export default {
         reject(err)
       }
     })
+  },
+  UPDATE_STEP (context, step) {
+    context.commit('updateStep', step)
   }
 }

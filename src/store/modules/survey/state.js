@@ -1,4 +1,8 @@
 const state = () => ({
+  progress: {
+    currentStep: 0,
+    totalSteps: 5
+  },
   name: '',
   date: {
     day: '',

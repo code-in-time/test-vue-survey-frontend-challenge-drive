@@ -5,16 +5,25 @@
     name: 'SurveyProgress',
     components: {
       ProgressBar
+    },
+    computed: {
+      currentStep: {
+        get () {
+          return this.$store.state.survey.progress.currentStep
+        }
+      },
+      totalSteps: {
+        get () {
+          return this.$store.state.survey.progress.totalSteps
+        }
+      }
     }
   }
 </script>
 
 <template lang='pug'>
   .progress-bar-container
-  //- SUGGESTION: progress-bar needs a currentStep and a stages array. These need to be passed in here
-  //- SUGGESTION: un-comment the below when your ready to pass these in
-
-    //- progress-bar(:currentStep='currentStep', :totalSteps='stages.length')
+    progress-bar(:currentStep='currentStep', :totalSteps='totalSteps')
 
 </template>
 

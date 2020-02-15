@@ -9,20 +9,21 @@ Please leave anything you like in here
 - youtube
 
 ### New to me
-
 - Vue
 - vuex
 - stylus
 - pug
-
+- BEM methodology
+- validator
 
 ### TODO:
 3. progress bar
 4. Tests
-5. page transition
+5. DOB error
 
 
 #### TODO NOTEs:
 - Add loading spinner
 - Connect real api
-- The journey must always start from the beginning
+- The journey must always start from the beginning even if the user load in the middle of a journey
+- Experiment more wit the page transition

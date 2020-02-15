@@ -1,4 +1,5 @@
 import { startCase } from 'lodash'
+import state from '../../state'
 
 export default {
   updateName (state, name) {
@@ -56,5 +57,8 @@ export default {
     state.date.day = dateObj.day
     state.date.month = dateObj.month
     state.date.year = dateObj.year
+  },
+  updateStep (context, step) {
+    context.progress.currentStep = step
   }
 }
