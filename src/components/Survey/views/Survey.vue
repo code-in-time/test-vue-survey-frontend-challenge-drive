@@ -71,8 +71,8 @@
             h3 Get started
             p You can find stage one of the survey 
               router-link(to='/name') here
-      
-      router-view
+      transition( name="animation" enter-active-class="animated fadeInDown" leave-active-class="animated fadeOutUp")
+        router-view
 
 </template>
 
