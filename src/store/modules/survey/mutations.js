@@ -1,5 +1,4 @@
 import { startCase } from 'lodash'
-import state from '../../state'
 
 export default {
   updateName (state, name) {
