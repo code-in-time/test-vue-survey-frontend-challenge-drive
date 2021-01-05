@@ -14,7 +14,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "connect-history-api-fallback": "^1.5.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-html": "^4.0.6",
